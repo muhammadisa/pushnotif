@@ -1,12 +1,12 @@
 import React from 'react'
-import { Text, View, Button, StyleSheet } from 'react-native'
+import { Text, View, Button, StyleSheet, Alert } from 'react-native'
 import { LocalNotification } from './LocalPushController'
 import RemotePushController from './RemotePushController'
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
-
+import {useState, useEffect} from 'react';
 const App = () => {
-  const [permissions, setPermissions] = useState({});
+  // const [permissions, setPermissions] = useState({});
 
   useEffect(() => {
     const type = 'notification';
@@ -25,7 +25,11 @@ const App = () => {
       },
     );
 
-
+    PushNotificationIOS.addEventListener('register', onRegistered);
+    PushNotificationIOS.addEventListener(
+      'registrationError',
+      onRegistrationError,
+    );
     PushNotificationIOS.addEventListener(type, onRemoteNotification);
     return () => {
       PushNotificationIOS.removeEventListener(type);
@@ -42,6 +46,30 @@ const App = () => {
     } else {
       // Do something else with push notification
     }
+  };
+
+  const onRegistrationError = (error) => {
+    Alert.alert(
+      'Failed To Register For Remote Push',
+      `Error (${error.code}): ${error.message}`,
+      [
+        {
+          text: 'Dismiss',
+          onPress: null,
+        },
+      ],
+    );
+  };
+
+
+   const onRegistered = (deviceToken) => {
+     console.log('toket: ', deviceToken)
+    Alert.alert('Registered For Remote Push', `Device Token: ${deviceToken}`, [
+      {
+        text: 'Dismiss',
+        onPress: null,
+      },
+    ]);
   };
 
   const sendLocalNotificationWithSound = () => {

@@ -14,6 +14,7 @@
 		78F4CDD60490AB4183EA1DD7 /* libPods-pushnotif.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F18D5575FDD05BBCC5521B5 /* libPods-pushnotif.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A60A5B6FF7D3FF5C114EA1E9 /* libPods-pushnotif-pushnotifTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9B5AB0EB3988B53866A27B /* libPods-pushnotif-pushnotifTests.a */; };
+		E93CF06827A9874900B44484 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E93CF06727A9874900B44484 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		3F18D5575FDD05BBCC5521B5 /* libPods-pushnotif.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pushnotif.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = pushnotif/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E93CF06027A97C3A00B44484 /* pushnotif.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = pushnotif.entitlements; path = pushnotif/pushnotif.entitlements; sourceTree = "<group>"; };
+		E93CF06727A9874900B44484 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F6DCD58F5D6F60097E03289A /* Pods-pushnotif-pushnotifTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pushnotif-pushnotifTests.debug.xcconfig"; path = "Target Support Files/Pods-pushnotif-pushnotifTests/Pods-pushnotif-pushnotifTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +89,7 @@
 		13B07FAE1A68108700A75B9A /* pushnotif */ = {
 			isa = PBXGroup;
 			children = (
+				E93CF06727A9874900B44484 /* GoogleService-Info.plist */,
 				E93CF06027A97C3A00B44484 /* pushnotif.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -246,6 +249,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				E93CF06827A9874900B44484 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
