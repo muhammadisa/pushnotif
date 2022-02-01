@@ -45,6 +45,7 @@ export const ConfigurePushNotification = () => {
       console.log("On Register Callback", token)
     },
     onNotification: function (notification) {
+      PushNotification.localNotification(notification)
       console.log("On Notification Callback", notification)
     },
     onAction: function (notification) {
