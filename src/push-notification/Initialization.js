@@ -1,4 +1,5 @@
 import PushNotification, { Importance } from "react-native-push-notification"
+import { useEffect } from "react"
 
 // CreateChannel create notification channel for specify
 // notification segment and separation for other kind
@@ -41,23 +42,50 @@ export const LocalNotification = () => {
 // modify the callback as you want to manipulate data as you need
 export const ConfigurePushNotification = () => {
   PushNotification.configure({
-    onRegister: function (token) {
+    onRegister: token => {
       console.log("On Register Callback", token)
     },
-    onNotification: function (notification) {
+    onNotification: notification => {
       PushNotification.localNotification(notification)
       console.log("On Notification Callback", notification)
     },
-    onAction: function (notification) {
+    onAction: notification => {
       console.log("On Action Callback", notification)
     },
-    onRegistrationError: function (error) {
+    onRegistrationError: error => {
       console.log("On Registration Error Callback", error)
     },
-    onRemoteFetch: function (notificationData) {
+    onRemoteFetch: notificationData => {
       console.log("On Remote Fetch Callback", notificationData)
     },
     popInitialNotification: true,
     requestPermissions: true,
   })
+}
+
+export const ConfigurePushNotificationComponent = () => {
+  useEffect(() => {
+    PushNotification.configure({
+      onRegister: token => {
+        console.log("On Register Callback", token)
+      },
+      onNotification: notification => {
+        PushNotification.localNotification({
+          channelId: "push-notification-test-channel-id",
+          autoCancel: true,
+          bigText: notification.message,
+          subText: notification.message,
+          title: notification.title,
+          message: notification.message,
+          vibrate: true,
+          vibration: 300,
+          actions: '["Yes", "No"]',
+        })
+        console.log("On Notification Callback", notification)
+      },
+      popInitialNotification: true,
+      requestPermissions: true,
+    })
+  }, [])
+  return null
 }

@@ -3,6 +3,7 @@ import { Text, View, Button, StyleSheet } from "react-native"
 import {
   LocalNotification,
   ConfigurePushNotification,
+  ConfigurePushNotificationComponent,
   CreateChannel,
 } from "./src/push-notification/Initialization"
 
@@ -37,6 +38,7 @@ const App = () => {
           onPress={handlePushLocalNotificationIos}
         />
       </View>
+      <ConfigurePushNotificationComponent />
     </View>
   )
 }
